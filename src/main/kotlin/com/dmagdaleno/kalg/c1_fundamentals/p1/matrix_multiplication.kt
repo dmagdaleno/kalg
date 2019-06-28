@@ -25,7 +25,7 @@ fun matrixMultiplication(a: Array<Array<Int>>, b: Array<Array<Int>>): Array<Arra
     for(i in 0 until size) {
         for(j in 0 until size) {
             for(k in 0 until size) {
-                c[i][j] = a[i][k] * b[k][j]
+                c[i][j] += a[i][k] * b[k][j]
             }
         }
     }
