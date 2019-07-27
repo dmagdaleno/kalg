@@ -1,32 +1,25 @@
 package com.dmagdaleno.kalg.c1_fundamentals.p1
 
 fun Array<Int>.binarySearch(n: Int): Int {
-    var i = -1
-
     var lower = 0
-    var higher = this.size
+    var higher = this.size -1
 
-    if(n < 0 || n > this[higher-1])
-        return i
-
-    while (lower < higher) {
-        val middle = (higher+lower)/2
+    while (lower <= higher) {
+        val middle = lower + (higher-lower)/2
 
         println("l=$lower, m=$middle, h=$higher")
 
-        if(this[middle] < n){
-            lower = middle
+        when {
+            n < this[middle] -> higher = middle -1
+
+            n > this[middle] -> lower = middle +1
+
+            else -> return middle
         }
-        else if(this[middle] > n){
-            higher = middle
-        }
-        else {
-            i = middle
-            break
-        }
+
     }
 
-    return i
+    return -1
 }
 
 fun main(args: Array<String>) {
