@@ -3,6 +3,7 @@ package com.dmagdaleno.kalg.c1_fundamentals.p5
 class UnionFindClient(private val unionFind: UnionFind) {
 
     fun run() {
+        print()
         loadTestData().forEach { (p, q) ->
             if(!unionFind.connected(p, q)) {
                 unionFind.union(p, q)
