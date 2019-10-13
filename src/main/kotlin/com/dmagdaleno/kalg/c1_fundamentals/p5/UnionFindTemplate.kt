@@ -6,8 +6,6 @@ abstract class UnionFindTemplate(private val size: Int): UnionFind {
 
     override fun connected(p: Int, q: Int): Boolean = find(p) == find(q)
 
-    override fun find(p: Int): Int = id[p]
-
     override fun count(): Int = size
 
     fun print() {
